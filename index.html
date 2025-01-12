@@ -12,7 +12,7 @@
         />
         <meta
             property="og:image"
-            content="https://ilhammajidzaiman.github.io/assets/image/thumbnail.jpg"
+            content="https://ilhammajidzaiman.github.io/assets/image/thumbnail-square.jpg"
         />
 
         <title>Ilham Majid Zaiman</title>
@@ -578,9 +578,11 @@
 
             function whatsapp() {
                 const url = "https://ilhammajidzaiman.github.io";
-                const api = "whatsapp://send?text=" + url;
-                const navUrl = api + url;
-                window.open(navUrl);
+                const message = "Check this out: " + url;
+                const api = "whatsapp://send?text=";
+
+                const whatsappUrl = api + `${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, "_blank");
             }
 
             function twitter() {
