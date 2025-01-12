@@ -125,7 +125,7 @@
                         <h1 class="display-4 fw-medium lh-1">
                             Ilham Majid Zaiman
                         </h1>
-                        <h1 class="fs-5 fw-light text-secondary mb-5">
+                        <h1 class="fs-5 fw-light text-secondary mb-4">
                             I am a programmer, Let’s discuss about an project!
                         </h1>
                         <a
@@ -579,10 +579,9 @@
             function whatsapp() {
                 const url = "https://ilhammajidzaiman.github.io";
                 const message = "Check this out: " + url;
-                const api = "whatsapp://send?text=";
-
-                const whatsappUrl = api + `${encodeURIComponent(message)}`;
-                window.open(whatsappUrl, "_blank");
+                const api =
+                    "https://wa.me/?text=" + encodeURIComponent(message);
+                window.open(api, "_blank");
             }
 
             function twitter() {
