@@ -8,7 +8,7 @@
         <meta property="og:title" content="Portfolio" />
         <meta
             property="og:description"
-            content="Hi, I am Ilham Majid Zaiman, I am a programmer, Let’s discuss about an project!"
+            content="Hi, I am Ilham Majid Zaiman, I am a Programmer. Let’s discuss about an Project!"
         />
         <meta
             property="og:image"
@@ -126,7 +126,7 @@
                             Ilham Majid Zaiman
                         </h1>
                         <h1 class="fs-5 fw-light text-secondary mb-4">
-                            I am a programmer, Let’s discuss about an project!
+                            I am a Programmer. Let’s discuss about an Project!
                         </h1>
                         <a
                             href="#contact"
@@ -549,83 +549,48 @@
         <script src="/assets/js/masonry.pkgd.min.js"></script>
 
         <script>
-            const date = new Date();
-            let year = date.getFullYear();
-            document.getElementById("year").innerHTML = year;
+            function updateYear() {
+                const date = new Date();
+                let year = date.getFullYear();
+                document.getElementById("year").innerHTML = year;
+            }
+            updateYear();
 
-            let width = 600;
-            let height = 400;
+            const url = "https://ilhammajidzaiman.github.io";
+            const message = "Check out my portfolio: " + url;
 
             function facebook() {
-                let left = window.innerWidth / 2 - width / 2;
-                let top = window.innerHeight / 2 - height / 2;
-                const url = "https://ilhammajidzaiman.github.io";
-                const api = "https://www.facebook.com/sharer/sharer.php?u=";
-                const navUrl = api + url;
-                window.open(
-                    navUrl,
-                    "_blank",
-                    "width=" +
-                        width +
-                        ",height=" +
-                        height +
-                        ",left=" +
-                        left +
-                        ",top=" +
-                        top
-                );
+                const api = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    url
+                )}&quote=${encodeURIComponent(message)}`;
+                window.open(api, "_blank");
             }
 
             function whatsapp() {
-                const url = "https://ilhammajidzaiman.github.io";
-                const message = "Check this out: " + url;
                 const api =
                     "https://wa.me/?text=" + encodeURIComponent(message);
                 window.open(api, "_blank");
             }
 
-            function twitter() {
-                let left = window.innerWidth / 2 - width / 2;
-                let top = window.innerHeight / 2 - height / 2;
-                const url = "https://ilhammajidzaiman.github.io";
-                const api = "https://twitter.com/intent/tweet?text=";
-                const navUrl = api + url;
-                window.open(
-                    navUrl,
-                    "_blank",
-                    "width=" +
-                        width +
-                        ",height=" +
-                        height +
-                        ",left=" +
-                        left +
-                        ",top=" +
-                        top
-                );
+            function telegram() {
+                const api = `https://t.me/share/url?url=${encodeURIComponent(
+                    url
+                )}&text=${encodeURIComponent(message)}`;
+                window.open(api, "_blank");
             }
 
-            function telegram() {
-                let left = window.innerWidth / 2 - width / 2;
-                let top = window.innerHeight / 2 - height / 2;
-                const url = "https://ilhammajidzaiman.github.io";
-                const api = "https://telegram.me/share/url?url=";
-                const navUrl = api + url;
-                window.open(
-                    navUrl,
-                    "_blank",
-                    "width=" +
-                        width +
-                        ",height=" +
-                        height +
-                        ",left=" +
-                        left +
-                        ",top=" +
-                        top
-                );
+            function twitter() {
+                const hashtags = "website,portfolio";
+                const via = "rider_lintas";
+                const api = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                    message
+                )}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(
+                    hashtags
+                )}&via=${encodeURIComponent(via)}`;
+                window.open(api, "_blank");
             }
 
             function copyLink() {
-                const url = "{{ $share }}";
                 const textarea = document.createElement("textarea");
                 textarea.value = url;
                 document.body.appendChild(textarea);
