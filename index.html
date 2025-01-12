@@ -549,15 +549,14 @@
         <script src="/assets/js/masonry.pkgd.min.js"></script>
 
         <script>
-            function updateYear() {
-                const date = new Date();
-                let year = date.getFullYear();
-                document.getElementById("year").innerHTML = year;
-            }
-            updateYear();
-
+            const date = new Date();
             const url = "https://ilhammajidzaiman.github.io";
             const message = "Check out my portfolio: " + url;
+
+            window.onload = function updateYear() {
+                let year = date.getFullYear();
+                document.getElementById("year").innerHTML = year;
+            };
 
             function facebook() {
                 const api = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
