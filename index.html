@@ -556,7 +556,7 @@
         <script>
             const date = new Date();
             const url = "https://ilhammajidzaiman.github.io";
-            const message = "Check out my portfolio: " + url;
+            const message = "Check out my portfolio";
 
             window.onload = function updateYear() {
                 let year = date.getFullYear();
@@ -566,13 +566,14 @@
             function facebook() {
                 const api = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                     url
-                )}&quote=${encodeURIComponent(message)}`;
+                )}&quote=${encodeURIComponent(message + ": " + url)}`;
                 window.open(api, "_blank");
             }
 
             function whatsapp() {
                 const api =
-                    "https://wa.me/?text=" + encodeURIComponent(message);
+                    "https://wa.me/?text=" +
+                    encodeURIComponent(message + ": " + url);
                 window.open(api, "_blank");
             }
 
