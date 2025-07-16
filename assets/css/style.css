@@ -1,5 +1,22 @@
-body {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
+  html,
+  body {
+      font-family: "Inter", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  .hero {
+      background-repeat: no-repeat;
+      /* background-color: #35b57c; */
+      /* background-color: #001f3f; */
+      /* color: #fefefc; */
+      background-image: url("../../assets/image/shiny.png");
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
