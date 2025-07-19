@@ -535,15 +535,6 @@
                             <i class="rounded-circle bi bi-facebook fs-4"></i>
                         </button>
                         <button
-                            onclick="twitter()"
-                            type="button"
-                            class="btn btn-outline-secondary"
-                            data-bs-toggle="tooltip"
-                            title="Twitter X"
-                        >
-                            <i class="rounded-circle bi bi-twitter-x fs-4"></i>
-                        </button>
-                        <button
                             onclick="telegram()"
                             type="button"
                             class="btn btn-outline-secondary"
@@ -551,6 +542,15 @@
                             title="Telegram"
                         >
                             <i class="rounded-circle bi bi-telegram fs-4"></i>
+                        </button>
+                        <button
+                            onclick="twitter()"
+                            type="button"
+                            class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Twitter X"
+                        >
+                            <i class="rounded-circle bi bi-twitter-x fs-4"></i>
                         </button>
                         <button
                             onclick="copyLink(this)"
@@ -568,63 +568,6 @@
 
         <script src="/src/dist/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/masonry.pkgd.min.js"></script>
-
-        <script>
-            const date = new Date();
-            const url = "https://ilhammajidzaiman.github.io";
-            const message = "Check out my portfolio";
-
-            document
-                .querySelectorAll('[data-bs-toggle="tooltip"]')
-                .forEach((el) => {
-                    new bootstrap.Tooltip(el);
-                });
-
-            window.onload = function updateYear() {
-                let year = date.getFullYear();
-                document.getElementById("year").innerHTML = year;
-            };
-
-            function facebook() {
-                const api = `
-                https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-                    url
-                )}&quote=${encodeURIComponent(message + ": " + url)}`;
-                window.open(api, "_blank");
-            }
-
-            function whatsapp() {
-                const api =
-                    "https://wa.me/?text=" +
-                    encodeURIComponent(message + ": " + url);
-                window.open(api, "_blank");
-            }
-
-            function telegram() {
-                const api = `https://t.me/share/url?url=${encodeURIComponent(
-                    url
-                )}&text=${encodeURIComponent(message)}`;
-                window.open(api, "_blank");
-            }
-
-            function twitter() {
-                const hashtags = "website,portfolio";
-                const api = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-                    url
-                )}&text=${encodeURIComponent(message)}`;
-                window.open(api, "_blank");
-            }
-
-            function copyLink(el) {
-                navigator.clipboard.writeText(url).then(() => {
-                    const tooltip = bootstrap.Tooltip.getInstance(el);
-                    tooltip.setContent({ ".tooltip-inner": "Copied" });
-                    tooltip.show();
-                    setTimeout(() => {
-                        tooltip.setContent({ ".tooltip-inner": "Copy" });
-                    }, 2000);
-                });
-            }
-        </script>
+        <script src="/src/assets/js/script.js"></script>
     </body>
 </html>
