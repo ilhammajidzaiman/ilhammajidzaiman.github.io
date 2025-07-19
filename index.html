@@ -12,12 +12,12 @@
         />
         <meta
             property="og:image"
-            content="https://ilhammajidzaiman.github.io/assets/image/thumbnail.jpg"
+            content="https://ilhammajidzaiman.github.io/src/assets/image/thumbnail-square.jpg"
         />
-        <title>Ilham Majid Zaiman</title>
+        <title>Ilham Majid Zaiman's Portfolio</title>
         <link
             rel="shortcut icon"
-            href="/assets/image/imz.svg"
+            href="/src/assets/image/imz.svg"
             type="image/x-icon"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,15 +26,21 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css" />
         <link
             rel="stylesheet"
-            href="/assets/bootstrap/icons/font/bootstrap-icons.css"
+            href="/src/dist/bootstrap/css/bootstrap.min.css"
         />
-        <link rel="stylesheet" href="/assets/fontawesome/css/fontawesome.css" />
-        <link rel="stylesheet" href="/assets/fontawesome/css/brands.css" />
-        <link rel="stylesheet" href="/assets/fontawesome/css/solid.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="/src/dist/bootstrap/icons/font/bootstrap-icons.css"
+        />
+        <link
+            rel="stylesheet"
+            href="/src/dist/fontawesome/css/fontawesome.css"
+        />
+        <link rel="stylesheet" href="/src/dist/fontawesome/css/brands.css" />
+        <link rel="stylesheet" href="/src/dist/fontawesome/css/solid.css" />
+        <link rel="stylesheet" href="/src/assets/css/style.css" />
     </head>
 
     <body id="home" class="bg-body-tertiary">
@@ -42,7 +48,7 @@
             <div class="container px-4 py-2 bg-white shadow rounded-pill">
                 <a href="" class="navbar-brand d-flex align-items-center">
                     <img
-                        src="assets/image/imz.svg"
+                        src="/src/assets/image/imz.svg"
                         alt="Logo"
                         height="35"
                         class="d-inline-block align-text-center me-3"
@@ -112,7 +118,7 @@
                     >
                         <div class="col-md-5">
                             <img
-                                src="assets/image/avatar.jpg"
+                                src="/src/assets/image/avatar.jpg"
                                 class="img-fluid w-100 rounded-start-circle pb-3"
                                 alt="logo"
                                 loading="lazy"
@@ -410,7 +416,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <a href="">
                         <img
-                            src="assets/image/default-img.svg"
+                            src="/src/assets/image/default-img.svg"
                             alt="image"
                             class="w-100 rounded-2 bg-secondary-subtle"
                         />
@@ -419,7 +425,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <a href="">
                         <img
-                            src="assets/image/default-img.svg"
+                            src="/src/assets/image/default-img.svg"
                             alt="image"
                             class="w-100 rounded-2 bg-secondary-subtle"
                         />
@@ -428,7 +434,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <a href="">
                         <img
-                            src="assets/image/default-img.svg"
+                            src="/src/assets/image/default-img.svg"
                             alt="image"
                             class="w-100 rounded-2 bg-secondary-subtle"
                         />
@@ -437,7 +443,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <a href="">
                         <img
-                            src="assets/image/default-img.svg"
+                            src="/src/assets/image/default-img.svg"
                             alt="image"
                             class="w-100 rounded-2 bg-secondary-subtle"
                         />
@@ -490,7 +496,7 @@
                         class="navbar-brand d-flex align-items-center mb-2"
                     >
                         <img
-                            src="assets/image/imz.svg"
+                            src="/src/assets/image/imz.svg"
                             alt="Logo"
                             height="75"
                             class="d-inline-block align-text-center me-3"
@@ -514,6 +520,8 @@
                             onclick="whatsapp()"
                             type="button"
                             class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Whatsapp"
                         >
                             <i class="rounded-circle bi bi-whatsapp fs-4"></i>
                         </button>
@@ -521,6 +529,8 @@
                             onclick="facebook()"
                             type="button"
                             class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Facebook"
                         >
                             <i class="rounded-circle bi bi-facebook fs-4"></i>
                         </button>
@@ -528,6 +538,8 @@
                             onclick="twitter()"
                             type="button"
                             class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Twitter X"
                         >
                             <i class="rounded-circle bi bi-twitter-x fs-4"></i>
                         </button>
@@ -535,13 +547,17 @@
                             onclick="telegram()"
                             type="button"
                             class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Telegram"
                         >
                             <i class="rounded-circle bi bi-telegram fs-4"></i>
                         </button>
                         <button
-                            onclick="copyLink()"
+                            onclick="copyLink(this)"
                             type="button"
                             class="btn btn-outline-secondary"
+                            data-bs-toggle="tooltip"
+                            title="Copy"
                         >
                             <i class="rounded-circle bi bi-copy fs-4"></i>
                         </button>
@@ -550,7 +566,7 @@
             </div>
         </section>
 
-        <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/src/dist/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/assets/js/masonry.pkgd.min.js"></script>
 
         <script>
@@ -558,13 +574,20 @@
             const url = "https://ilhammajidzaiman.github.io";
             const message = "Check out my portfolio";
 
+            document
+                .querySelectorAll('[data-bs-toggle="tooltip"]')
+                .forEach((el) => {
+                    new bootstrap.Tooltip(el);
+                });
+
             window.onload = function updateYear() {
                 let year = date.getFullYear();
                 document.getElementById("year").innerHTML = year;
             };
 
             function facebook() {
-                const api = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                const api = `
+                https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                     url
                 )}&quote=${encodeURIComponent(message + ": " + url)}`;
                 window.open(api, "_blank");
@@ -586,23 +609,21 @@
 
             function twitter() {
                 const hashtags = "website,portfolio";
-                const via = "rider_lintas";
-                const api = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                    message
-                )}&url=${encodeURIComponent(url)}&hashtags=${encodeURIComponent(
-                    hashtags
-                )}&via=${encodeURIComponent(via)}`;
+                const api = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                    url
+                )}&text=${encodeURIComponent(message)}`;
                 window.open(api, "_blank");
             }
 
-            function copyLink() {
-                const textarea = document.createElement("textarea");
-                textarea.value = url;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
-                alert("Tautan berhasil disalin");
+            function copyLink(el) {
+                navigator.clipboard.writeText(url).then(() => {
+                    const tooltip = bootstrap.Tooltip.getInstance(el);
+                    tooltip.setContent({ ".tooltip-inner": "Copied" });
+                    tooltip.show();
+                    setTimeout(() => {
+                        tooltip.setContent({ ".tooltip-inner": "Copy" });
+                    }, 2000);
+                });
             }
         </script>
     </body>
