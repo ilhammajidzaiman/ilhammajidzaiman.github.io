@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="auto">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,14 +44,14 @@
     </head>
 
     <body id="home" class="bg-body-tertiary">
-        <nav class="navbar navbar-expand-md fixed-top text-dark fw-medium m-2">
-            <div class="container px-4 py-2 bg-white shadow rounded-pill">
+        <nav class="navbar navbar-expand-md fixed-top fw-medium m-2">
+            <div class="container px-4 py-2 bg-body shadow rounded-pill">
                 <a href="" class="navbar-brand d-flex align-items-center">
                     <img
                         src="/src/assets/image/imz.svg"
                         alt="Logo"
-                        height="35"
-                        class="d-inline-block align-text-center me-3"
+                        height="40"
+                        class="d-inline-block align-text-center me-3 bg-white p-2 rounded-3"
                     />
                     Ilham Majid Zaiman
                 </a>
@@ -66,7 +66,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div
-                    class="offcanvas offcanvas-end text-bg-light bg-opacity-100"
+                    class="offcanvas offcanvas-end bg-opacity-100"
                     tabindex="-1"
                     id="offcanvasNavbar2"
                     aria-labelledby="offcanvasNavbar2Label"
@@ -103,6 +103,55 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#contact" class="nav-link">Contact</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    Theme
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <button
+                                            type="button"
+                                            class="dropdown-item"
+                                            data-bs-theme-value="auto"
+                                        >
+                                            <i
+                                                class="bi bi-circle-half opacity-75 me-2"
+                                            ></i>
+                                            Auto
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            type="button"
+                                            class="dropdown-item"
+                                            data-bs-theme-value="light"
+                                        >
+                                            <i
+                                                class="bi bi-sun-fill opacity-75 me-2"
+                                            ></i>
+                                            Light
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            type="button"
+                                            class="dropdown-item"
+                                            data-bs-theme-value="dark"
+                                        >
+                                            <i
+                                                class="bi bi-moon-stars-fill opacity-75 me-2"
+                                            ></i>
+                                            Dark
+                                        </button>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -716,5 +765,6 @@
         <script src="/src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="/src/vendor/masonry/masonry.pkgd.min.js"></script>
         <script src="/src/assets/js/script.js"></script>
+        <script src="/src/assets/js/dark-mode.js"></script>
     </body>
 </html>
