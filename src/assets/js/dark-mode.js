@@ -6,13 +6,31 @@
 
     const getPreferredTheme = () => {
         const storedTheme = getStoredTheme();
-        if (storedTheme) {
-            return storedTheme;
-        }
-
+        if (storedTheme) return storedTheme;
         return window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light";
+    };
+
+    const updateThemeToggleIcon = (theme) => {
+        const themeToggle = document.getElementById("theme-toggle-icon");
+        const icon = themeToggle.querySelector("i");
+
+        if (icon) {
+            icon.classList.remove(
+                "bi-sun-fill",
+                "bi-moon-stars-fill",
+                "bi-circle-half"
+            );
+
+            if (theme === "light") {
+                icon.classList.add("bi-sun-fill");
+            } else if (theme === "dark") {
+                icon.classList.add("bi-moon-stars-fill");
+            } else {
+                icon.classList.add("bi-circle-half");
+            }
+        }
     };
 
     const setTheme = (theme) => {
@@ -26,27 +44,27 @@
         } else {
             document.documentElement.setAttribute("data-bs-theme", theme);
         }
+        updateThemeToggleIcon(theme);
     };
 
     const showActiveTheme = (theme) => {
-        document
-            .querySelectorAll("[data-bs-theme-value]")
-            .forEach((element) => {
-                element.classList.remove("text-primary");
-                element.setAttribute("aria-pressed", "false");
-            });
+        document.querySelectorAll("[data-bs-theme-value]").forEach((el) => {
+            el.classList.remove("text-primary");
+            el.setAttribute("aria-pressed", "false");
+        });
 
-        const activeButton = document.querySelector(
+        const activeBtn = document.querySelector(
             `[data-bs-theme-value="${theme}"]`
         );
-        if (activeButton) {
-            activeButton.classList.add("text-primary");
-            activeButton.setAttribute("aria-pressed", "true");
+        if (activeBtn) {
+            activeBtn.classList.add("text-primary");
+            activeBtn.setAttribute("aria-pressed", "true");
         }
     };
 
-    setTheme(getPreferredTheme());
-    showActiveTheme(getPreferredTheme());
+    const currentTheme = getPreferredTheme();
+    setTheme(currentTheme);
+    showActiveTheme(currentTheme);
 
     window.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll("[data-bs-theme-value]").forEach((button) => {
