@@ -24,6 +24,7 @@
     <div id="navigation"></div>
     <div id="hero"></div>
     <div id="about"></div>
+    <div id="services"></div>
     <div id="service"></div>
     <div id="tech"></div>
     <div id="project"></div>
@@ -45,6 +46,11 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('about').innerHTML = data;
+            });
+        fetch('/src/partial/services.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('services').innerHTML = data;
             });
         fetch('/src/partial/service.html')
             .then(response => response.text())
