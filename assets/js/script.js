@@ -43,12 +43,12 @@ function twitter() {
 }
 
 function copyLink(el) {
-    navigator.clipboard.writeText(url).then(() => {
-        const tooltip = bootstrap.Tooltip.getInstance(el);
-        tooltip.setContent({ ".tooltip-inner": "Copied" });
-        tooltip.show();
-        setTimeout(() => {
-            tooltip.setContent({ ".tooltip-inner": "Copy" });
-        }, 2000);
-    });
+    navigator.clipboard
+        .writeText(url)
+        .then(() => {
+            alert("Link copied!");
+        })
+        .catch(() => {
+            alert("Failed to copy link.");
+        });
 }
